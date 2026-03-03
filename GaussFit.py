@@ -40,7 +40,7 @@ nsigma = 1 # for aperture fitting around moment 0 map
 
 rms_diagnose = True
 
-aperture_selection = 0.8 # for automatic aperture selection use 'auto' else input numeric value in arcsec
+aperture_selection = 'auto' # for automatic aperture selection use 'auto' else input numeric value in arcsec
 
 mom_reg_size = "3.0000" # region size for moment maps
 
