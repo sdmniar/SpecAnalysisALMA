@@ -28,7 +28,7 @@ The analysis flow is as follows:
 1. **Initial Moment 0 Map**: creates a moment 0 map for every target source and line.
 2. **Selection of Extraction Aperture Size (automated)**: for a given sigma, fits a circular aperture on the moment 0 map for every SPW. Then takes the maximum aperture size as common across all SPW for a given line.
 3. **Region File Creation**: automatically generates region files for each target source and line with the selected extraction aperture size.
-4. **RMS Noise Measurement**: uses the corresponding **.pb** file for each cube to define circular regions for 95% and 50% of the PB response. Places 100 random apertures (0.5" each) within this annulus on the .image files, and calculates mean RMS across apertures.
+4. **RMS Noise Measurement**: uses the corresponding **.pb** file for each cube to define circular regions for 95% and 50% of the PB response. Places 50 random apertures, with the same radius as the extraction aperture, within this annulus on the .image files, and calculates mean RMS across apertures.
 5. **FITS Conversion**: converts FITS files into CASA-friendly image format.
 6. **Flux Extraction**: uses `imstat` to extract the flux spectrum for each region.
 7. **Gaussian Fitting**: fits both single and double Gaussians to each spectral window (SPW). Selects the best fits based on reduced chi-squared statistics.
@@ -50,6 +50,7 @@ This is the main script. It reads the dictionaries from `GaussFitDict.py` and ru
 * Plain text file listing your target coordinates in the format: `# id ra dec zphot`
 * SNR threshold (useful if multiple SPW)
 * Moment-0 contour level: by default `nsigma = 1` to fit an extraction aperture.
+* RMS diagnostic tool: plots flux distribution across all apertures along with a Q-Q plot.
 * Extraction aperture selection method: for automatic aperture selection use 'auto' else input numeric value in arcsec.
 * Aperture size for moment maps (in arcsec)
 * Base directory: required to store folders with additional data.
