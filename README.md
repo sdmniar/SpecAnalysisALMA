@@ -21,7 +21,7 @@ Contains user-defined dictionaries for:
 
 **Note**: modify or append entries as needed to match your dataset and directory structure. 
 
-## GaussFit.py Version 3
+## GaussFit.py
 **Note**: Use this if aperture selection based on moment 0 map is preferred. This version also calculates luminosity.  
 ### Workflow
 The analysis flow is as follows:
