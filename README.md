@@ -53,4 +53,8 @@ This is the main script. It reads the dictionaries from `GaussFitDict.py` and ru
 * RMS diagnostic tool: plots flux distribution across all apertures along with a Q-Q plot.
 * Extraction aperture selection method: for automatic aperture selection use 'auto' else input numeric value in arcsec.
 * Aperture size for moment maps (in arcsec)
+* Double-Gaussian fitting options:
+  * `merge_overlapping_peaks`: controls whether overlapping peaks are blended or kept as separate peaks. Default `True`.
+  * `min_second_peak_snr`: SNR threshold for the secondary peak. Default is `0`.
+  * `downgraded_from_double`: if `True`, downgrades a double-Gaussian fit to a single-Gaussian fit when the secondary peak falls below `min_second_peak_snr`. Default is `True`.
 * Base directory: required to store folders with additional data.
